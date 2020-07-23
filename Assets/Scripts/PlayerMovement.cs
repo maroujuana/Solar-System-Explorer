@@ -8,44 +8,52 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] 
-    private float movementSpeed;
-    // Start is called before the first frame update
+    public float movementSpeed;
+    public float rotationSpeed;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.D))
-        {
-            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * movementSpeed;
-        }
+        //if(Input.GetKey(KeyCode.D))
+        //{
+        //    transform.position += new Vector3(1, 0, 0) * Time.deltaTime * movementSpeed;
+        //}
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * movementSpeed;
-        }
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * movementSpeed;
+        //}
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += new Vector3(0, 0, 1) * Time.deltaTime * movementSpeed;
-        }
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    transform.position += new Vector3(0, 0, 1) * Time.deltaTime * movementSpeed;
+        //}
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += new Vector3(0, 0, -1) * Time.deltaTime * movementSpeed;
-        }
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    transform.position += new Vector3(0, 0, -1) * Time.deltaTime * movementSpeed;
+        //}
 
-        if (Input.GetKey(KeyCode.Keypad8))
-        {
-            transform.position += new Vector3(0, 1, 0) * Time.deltaTime * movementSpeed;
-        }
+        //if (Input.GetKey(KeyCode.Keypad8))
+        //{
+        //    transform.position += new Vector3(0, 1, 0) * Time.deltaTime * movementSpeed;
+        //}
 
-        if (Input.GetKey(KeyCode.Keypad2))
-        {
-            transform.position += new Vector3(0, -1, 0) * Time.deltaTime * movementSpeed;
-        }
+        //if (Input.GetKey(KeyCode.Keypad2))
+        //{
+        //    transform.position += new Vector3(0, -1, 0) * Time.deltaTime * movementSpeed;
+        //}
+
+        float translation = Input.GetAxis("Vertical") * movementSpeed;
+        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+
+        translation *= Time.deltaTime;
+        rotation *= Time.deltaTime;
+
+        transform.Translate(0, 0, translation);
+        transform.Rotate(0, rotation, 0);
     }
 }
