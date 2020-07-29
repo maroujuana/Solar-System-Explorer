@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Nozzle
   - AlertHotZone
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -37,15 +37,15 @@ public class PlayerMovement : MonoBehaviour
         //    transform.position += new Vector3(0, 0, -1) * Time.deltaTime * movementSpeed;
         //}
 
-        //if (Input.GetKey(KeyCode.Keypad8))
-        //{
-        //    transform.position += new Vector3(0, 1, 0) * Time.deltaTime * movementSpeed;
-        //}
+        if (Input.GetKey(KeyCode.Keypad8))
+        {
+            transform.position += new Vector3(0, 1, 0) * Time.deltaTime * movementSpeed;
+        }
 
-        //if (Input.GetKey(KeyCode.Keypad2))
-        //{
-        //    transform.position += new Vector3(0, -1, 0) * Time.deltaTime * movementSpeed;
-        //}
+        if (Input.GetKey(KeyCode.Keypad2))
+        {
+            transform.position += new Vector3(0, -1, 0) * Time.deltaTime * movementSpeed;
+        }
 
         float translation = Input.GetAxis("Vertical") * movementSpeed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
