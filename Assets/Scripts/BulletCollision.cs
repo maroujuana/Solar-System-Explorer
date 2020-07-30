@@ -13,11 +13,9 @@ public class BulletCollision : MonoBehaviour
 
     public AudioClip destroySFX;
     public AudioClip ScoreSFX;
-    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,9 +26,8 @@ public class BulletCollision : MonoBehaviour
             if (hp <= 0)
             {
                 AudioSource.PlayClipAtPoint(destroySFX, this.gameObject.transform.position);
-                AudioSource.PlayClipAtPoint(ScoreSFX, BulletShooter.audioSource.gameObject.transform.position);
-                this.gameObject.SetActive(false);
-                Destroy(this.gameObject, 1);
+                BulletShooter.audioSource.PlayOneShot(ScoreSFX);
+                Destroy(this.gameObject);
                 score++;
                 
             }

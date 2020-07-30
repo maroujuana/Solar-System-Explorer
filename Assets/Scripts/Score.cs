@@ -17,6 +17,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = BulletCollision.score.ToString();
+        scoreText.text = "SCORE: " + BulletCollision.score.ToString();
     }
 }
