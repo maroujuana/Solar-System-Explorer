@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public string Tag;
     public Text scoreText;
 
     // Start is called before the first frame update
@@ -17,6 +16,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "SCORE: " + BulletCollision.score.ToString();
+        scoreText.text = "SCORE: " + EnemyBehavoir.score;
     }
 }

@@ -11,7 +11,6 @@ public class Revolution : MonoBehaviour
 		if (target == null)
 		{
 			target = this.gameObject.transform;
-			Debug.Log("RotateAround target not specified. Defaulting to parent GameObject");
 		}
 	}
 	// Update is called once per frame
